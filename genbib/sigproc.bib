@@ -1,0 +1,355 @@
+%example RDF dataset
+
+@misc{DBpedia,
+  title = {{DB}pedia},
+  howpublished  = {\url{http://wiki.dbpedia.org/}}
+}
+
+@misc{sparql2sql,
+  author = {Eric, Prud'hommeaux and Alexandre, Bertails},
+  title = {A Mapping of {SPARQL} Onto Conventional {SQL}},
+  howpublished =  {\url{https://www.w3.org/2008/07/MappingRules/StemMapping}},
+  year={2008},
+}
+
+@misc{freebase,
+  title = {{F}reebase},
+  howpublished  = {\url{https://www.freebase.com/}}
+}
+
+
+@misc{uniprot,
+  title = {{U}ni{P}rot},
+  howpublished = {\url{ftp://ftp.uniprot.org/}}
+}
+
+%SPARQL reference.
+@misc{sparql11,
+  author = {Steve Harris and Andy Seaborne},
+  title = {{SPARQL} 1.1 Query Language. {W3C} working draft},
+  howpublished = {\url{http://www.w3.org/TR/sparql11-query}},
+  year = {2013}
+}
+
+@misc{cardproblem,
+  author = {Guy Lohman},
+  title = {Is query optimization a solved problem?},
+  howpublished = {\url{http://wp.sigmod.org/?p=1075}},
+  year = {2014}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% related works
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%centrailzed triple store
+@inproceedings{rdf3x2010,
+  author    = {Thomas Neumann and Gerhard Weikum},
+ title={The {RDF-3X} engine for scalable management of {RDF} data},
+ year={2010},
+ booktitle = {PVLDB},
+ volume={19},
+ number={1},
+ pages={91-113},
+}
+
+%Virtuoso
+@incollection{virtuoso-bitmap,
+  author = {Erling, Orri and Mikhailov, Ivan},
+  booktitle = {Semantic Web Information Management},
+  pages = {501-519},
+  publisher = {Springer},
+  title = {Virtuoso: {RDF} Support in a Native {RDBMS}.},
+  year = 2009
+}
+
+
+
+@article{triplebit-vldb2013,
+ author = {Yuan, Pingpeng and Liu, Pu and Wu, Buwen and Jin, Hai and Zhang, Wenya and Liu, Ling},
+ title = {{T}riple{B}it: A Fast and Compact System for Large Scale {RDF} Data},
+ journal = {PVLDB},
+ volume = {6},
+ number = {7},
+ year = {2013},
+ pages = {517--528},
+ numpages = {12},
+}
+
+
+@article{Weiss:2008:HSI:1453856.1453965,
+ author = {Weiss, Cathrin and Karras, Panagiotis and Bernstein, Abraham},
+ title = {Hexastore: Sextuple Indexing for Semantic Web Data Management},
+ journal = {PVLDB.},
+ issue_date = {August 2008},
+ volume = {1},
+ number = {1},
+ month = aug,
+ year = {2008},
+ } 
+
+@inproceedings{Abadi:2007:SSW:1325851.1325900,
+ author = {Abadi, Daniel J. and Marcus, Adam and Madden, Samuel R. and Hollenbach, Kate},
+ title = {Scalable Semantic Web Data Management Using Vertical Partitioning},
+ booktitle = {VLDB},
+ year = {2007},
+ pages = {411--422},
+ numpages = {12},
+} 
+
+@article{Abadi:2009:SVP:1527460.1527469,
+ author = {Abadi, Daniel J. and Marcus, Adam and Madden, Samuel R. and Hollenbach, Kate},
+ title = {{SW}-{S}tore: A Vertically Partitioned {DBMS} for Semantic Web Data Management},
+ journal = {PVLDB},
+ volume = {18},
+ number = {2},
+ year = {2009},
+ pages = {385--406},
+} 
+
+@inproceedings{Chong:2005:ESR:1083592.1083734,
+ author = {Chong, Eugene Inseok and Das, Souripriya and Eadon, George and Srinivasan, Jagannathan},
+ title = {An Efficient {SQL}-based {RDF} Querying Scheme},
+ booktitle = {VLDB},
+ year = {2005},
+ pages = {1216--1227},
+ numpages = {12},
+} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SPARQL to SQL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%baseline 
+@article{Perez:2009:SCS:1567274.1567278,
+ author = {P{\'e}rez, Jorge and Arenas, Marcelo and Gutierrez, Claudio},
+ title = {Semantics and Complexity of {SPARQL}},
+ journal = {ACM Trans. Database Syst.},
+ volume = {34},
+ number = {3},
+ year = {2009},
+ pages = {16:1--16:45},
+ articleno = {16},
+} 
+
+@inproceedings{Bornea:2013:BER:2463676.2463718,
+ author = {Bornea, Mihaela and Dolby, Julian and Kementsietsidis, Anastasios and Srinivas, Kavitha and Dantressangle, Patrick and Udrea, Octavian and Bhattacharjee, Bishwaranjan},
+ title = {Building an Efficient {RDF} Store over a Relational Database},
+ booktitle = {SIGMOD},
+ year = {2013},
+ pages = {121--132},
+ numpages = {12},
+} 
+
+@article{Leis:2015:GQO:2850583.2850594,
+ author = {Leis, Viktor and Gubichev, Andrey and Mirchev, Atanas and Boncz, Peter and Kemper, Alfons and Neumann, Thomas},
+ title = {How Good Are Query Optimizers, Really?},
+ journal = {PVLDB},
+ issue_date = {November 2015},
+ volume = {9},
+ number = {3},
+ month = nov,
+ year = {2015},
+ } 
+
+
+@article{Ioannidis:1993:OHL:169725.169708,
+ author = {Ioannidis, Yannis E. and Christodoulakis, Stavros},
+ title = {Optimal Histograms for Limiting Worst-case Error Propagation in the Size of Join Results},
+ journal = {ACM Trans. Database Syst.},
+ volume = {18},
+ number = {4},
+ month = dec,
+ year = {1993},
+ issn = {0362-5915},
+ pages = {709--748},
+}  
+
+
+@inproceedings{Neumann:2011:CSA:2004686.2005604,
+ author = {Neumann, Thomas and Moerkotte, Guido},
+ title = {Characteristic Sets: Accurate Cardinality Estimation for {RDF} Queries with Multiple Joins},
+ booktitle = {ICDE},
+ year = {2011},
+ pages = {984--994},
+ numpages = {11},
+ } 
+
+@inproceedings{Picalausa:2011:RSQ:1999299.1999306,
+ author = {Picalausa, Francois and Vansummeren, Stijn},
+ title = {What Are Real {SPARQL} Queries Like?},
+ booktitle = {SWIM},
+ year = {2011},
+ pages = {7:1--7:6},
+ articleno = {7},
+ numpages = {6},
+} 
+
+
+%S3G2
+@inproceedings{s3g2-generator,
+  author    = {Minh{-}Duc Pham and
+               Peter A. Boncz and
+               Orri Erling},
+  title     = {{S3G2:} {A} Scalable Structure-Correlated Social Graph Generator},
+  booktitle = {{TPCTC}},
+  pages     = {156--172},
+  year      = {2012},
+}
+
+@inproceedings{Stocker:2008:SBG:1367497.1367578,
+ author = {Stocker, Markus and Seaborne, Andy and Bernstein, Abraham and Kiefer, Christoph and Reynolds, Dave},
+ title = {{SPARQL} Basic Graph Pattern Optimization Using Selectivity Estimation},
+ booktitle = {WWW},
+ year = {2008},
+ pages = {595--604},
+ numpages = {10},
+ } 
+
+
+@inproceedings{AbdelKader:2009:RRO:1559845.1559910,
+ author = {Abdel Kader, Riham and Boncz, Peter and Manegold, Stefan and van Keulen, Maurice},
+ title = {{ROX}: Run-time Optimization of {XQ}ueries},
+ booktitle = {SIGMOD},
+ year = {2009},
+ pages = {615--626},
+ numpages = {12},
+} 
+
+@inproceedings{DBLP:conf/btw/0001G13,
+  author    = {Thomas Neumann and
+               Cesar A. Galindo-Legaria},
+  title     = {Taking the Edge off Cardinality Estimation Errors using Incremental
+               Execution},
+  booktitle = {BTW},
+  pages     = {73--92},
+  year      = {2013},
+}
+
+@inproceedings{Chaudhuri:1998:OQO:275487.275492,
+ author = {Chaudhuri, Surajit},
+ title = {An Overview of Query Optimization in Relational Systems},
+ booktitle = {PODS},
+ year = {1998},
+ pages = {34--43},
+ numpages = {10},
+} 
+
+@inproceedings{DBLP:conf/edbt/Gubichev014,
+  author    = {Andrey Gubichev and
+               Thomas Neumann},
+  title     = {Exploiting the query structure for efficient join ordering in {SPARQL}
+               queries},
+  booktitle = {EDBT},
+  pages     = {439--450},
+  year      = {2014},
+}
+
+@inproceedings{Schmidt:2010:FSQ:1804669.1804675,
+ author = {Schmidt, Michael and Meier, Michael and Lausen, Georg},
+ title = {Foundations of {SPARQL} Query Optimization},
+ booktitle = {ICDT},
+ year = {2010},
+ pages = {4--33},
+ numpages = {30},
+} 
+
+@inproceedings{Tsialiamanis:2012:HQO:2247596.2247635,
+ author = {Tsialiamanis, Petros and Sidirourgos, Lefteris and Fundulaki, Irini and Christophides, Vassilis and Boncz, Peter},
+ title = {Heuristics-based Query Optimisation for {SPARQL}},
+ booktitle = {EDBT},
+ year = {2012},
+ pages = {324--335},
+ numpages = {12},
+} 
+
+@inproceedings{Ioannidis:1991:PES:115790.115835,
+ author = {Ioannidis, Yannis E. and Christodoulakis, Stavros},
+ title = {On the Propagation of Errors in the Size of Join Results},
+ booktitle = {SIGMOD},
+ year = {1991},
+ pages = {268--277},
+ numpages = {10},
+}
+
+@inproceedings{Kotoulas:2012:RRO:2426516.2426533,
+ author = {Kotoulas, Spyros and Urbani, Jacopo and Boncz, Peter and Mika, Peter},
+ title = {Robust Runtime Optimization and Skew-resistant Execution of Analytical SPARQL Queries on Pig},
+ booktitle = {ISWC},
+ year = {2012},
+ pages = {247--262},
+ numpages = {16},
+} 
+
+@inproceedings{Broekstra:2002:SGA:646996.711426,
+ author = {Broekstra, Jeen and Kampman, Arjohn and Harmelen, Frank van},
+ title = {Sesame: A Generic Architecture for Storing and Querying {RDF} and {RDF} Schema},
+ booktitle = {ISWC},
+ year = {2002},
+ pages = {54--68},
+ numpages = {15},
+} 
+
+@inproceedings{wilkinson06,
+  author = {Wilkinson, Kevin},
+   booktitle = {{SSWS}},
+  pages = {35-46},
+   title = {{Jena Property Table Implementation}},
+  year = 2006
+}
+
+@inproceedings{Ioannidis:2003:HH:1315451.1315455,
+ author = {Ioannidis, Yannis E.},
+ title = {The History of Histograms (Abridged)},
+ booktitle = {VLDB},
+ year = {2003},
+ pages = {19--30},
+ numpages = {12},
+} 
+
+@inproceedings{Lipton:1990:PSE:93597.93611,
+ author = {Lipton, Richard J. and Naughton, Jeffrey F. and Schneider, Donovan A.},
+ title = {Practical Selectivity Estimation Through Adaptive Sampling},
+ booktitle = {SIGMOD},
+ year = {1990},
+ pages = {1--11},
+ numpages = {11},
+} 
+
+@inproceedings{Cole:1994:ODQ:191839.191872,
+ author = {Cole, Richard L. and Graefe, Goetz},
+ title = {Optimization of Dynamic Query Evaluation Plans},
+ booktitle = {SIGMOD},
+ year = {1994},
+ pages = {150--160},
+ numpages = {11},
+} 
+
+@inproceedings{Graefe:1989:DQE:67544.66960,
+ author = {Graefe, G. and Ward, K.},
+ title = {Dynamic Query Evaluation Plans},
+ booktitle = {SIGMOD},
+ year = {1989},
+  pages = {358--366},
+ numpages = {9},
+} 
+
+@inproceedings{Bruno:2002:ESQ:564691.564722,
+ author = {Bruno, Nicolas and Chaudhuri, Surajit},
+ title = {Exploiting Statistics on Query Expressions for Optimization},
+ booktitle = {SIGMOD},
+ year = {2002},
+ pages = {263--274},
+ numpages = {12},
+} 
+
+@inproceedings{Harth:2012:DTL:2213836.2213909,
+ author = {Harth, Andreas and Hose, Katja and Schenkel, Ralf},
+ title = {Database Techniques for Linked Data Management},
+ booktitle = {SIGMOD},
+ year = {2012},
+ pages = {597--600},
+ numpages = {4},
+} 

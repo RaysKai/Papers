@@ -1,0 +1,159 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{DBpedia}
+{DB}pedia. \url{http://wiki.dbpedia.org/}
+
+\bibitem{freebase}
+{F}reebase. \url{https://www.freebase.com/}
+
+\bibitem{uniprot}
+{U}ni{P}rot. \url{ftp://ftp.uniprot.org/}
+
+\bibitem{Abadi:2007:SSW:1325851.1325900}
+Abadi, D.J., Marcus, A., Madden, S.R., Hollenbach, K.: Scalable semantic web
+  data management using vertical partitioning. In: VLDB. pp. 411--422 (2007)
+
+\bibitem{Abadi:2009:SVP:1527460.1527469}
+Abadi, D.J., Marcus, A., Madden, S.R., Hollenbach, K.: {SW}-{S}tore: A
+  vertically partitioned {DBMS} for semantic web data management. PVLDB
+  \textbf{18}(2),  385--406 (2009)
+
+\bibitem{AbdelKader:2009:RRO:1559845.1559910}
+Abdel~Kader, R., Boncz, P., Manegold, S., van Keulen, M.: {ROX}: Run-time
+  optimization of {XQ}ueries. In: SIGMOD. pp. 615--626 (2009)
+
+\bibitem{Bornea:2013:BER:2463676.2463718}
+Bornea, M., Dolby, J., Kementsietsidis, A., Srinivas, K., Dantressangle, P.,
+  Udrea, O., Bhattacharjee, B.: Building an efficient {RDF} store over a
+  relational database. In: SIGMOD. pp. 121--132 (2013)
+
+\bibitem{Broekstra:2002:SGA:646996.711426}
+Broekstra, J., Kampman, A., Harmelen, F.v.: Sesame: A generic architecture for
+  storing and querying {RDF} and {RDF} schema. In: ISWC. pp. 54--68 (2002)
+
+\bibitem{Bruno:2002:ESQ:564691.564722}
+Bruno, N., Chaudhuri, S.: Exploiting statistics on query expressions for
+  optimization. In: SIGMOD. pp. 263--274 (2002)
+
+\bibitem{Chaudhuri:1998:OQO:275487.275492}
+Chaudhuri, S.: An overview of query optimization in relational systems. In:
+  PODS. pp. 34--43 (1998)
+
+\bibitem{Chong:2005:ESR:1083592.1083734}
+Chong, E.I., Das, S., Eadon, G., Srinivasan, J.: An efficient {SQL}-based {RDF}
+  querying scheme. In: VLDB. pp. 1216--1227 (2005)
+
+\bibitem{Cole:1994:ODQ:191839.191872}
+Cole, R.L., Graefe, G.: Optimization of dynamic query evaluation plans. In:
+  SIGMOD. pp. 150--160 (1994)
+
+\bibitem{sparql2sql}
+Eric, P., Alexandre, B.: A mapping of {SPARQL} onto conventional {SQL}.
+  \url{https://www.w3.org/2008/07/MappingRules/StemMapping} (2008)
+
+\bibitem{virtuoso-bitmap}
+Erling, O., Mikhailov, I.: Virtuoso: {RDF} support in a native {RDBMS}. In:
+  Semantic Web Information Management, pp. 501--519. Springer (2009)
+
+\bibitem{Graefe:1989:DQE:67544.66960}
+Graefe, G., Ward, K.: Dynamic query evaluation plans. In: SIGMOD. pp. 358--366
+  (1989)
+
+\bibitem{DBLP:conf/edbt/Gubichev014}
+Gubichev, A., Neumann, T.: Exploiting the query structure for efficient join
+  ordering in {SPARQL} queries. In: EDBT. pp. 439--450 (2014)
+
+\bibitem{sparql11}
+Harris, S., Seaborne, A.: {SPARQL} 1.1 query language. {W3C} working draft.
+  \url{http://www.w3.org/TR/sparql11-query} (2013)
+
+\bibitem{Harth:2012:DTL:2213836.2213909}
+Harth, A., Hose, K., Schenkel, R.: Database techniques for linked data
+  management. In: SIGMOD. pp. 597--600 (2012)
+
+\bibitem{Ioannidis:2003:HH:1315451.1315455}
+Ioannidis, Y.E.: The history of histograms (abridged). In: VLDB. pp. 19--30
+  (2003)
+
+\bibitem{Ioannidis:1991:PES:115790.115835}
+Ioannidis, Y.E., Christodoulakis, S.: On the propagation of errors in the size
+  of join results. In: SIGMOD. pp. 268--277 (1991)
+
+\bibitem{Ioannidis:1993:OHL:169725.169708}
+Ioannidis, Y.E., Christodoulakis, S.: Optimal histograms for limiting
+  worst-case error propagation in the size of join results. ACM Trans. Database
+  Syst.  \textbf{18}(4),  709--748 (Dec 1993)
+
+\bibitem{Kotoulas:2012:RRO:2426516.2426533}
+Kotoulas, S., Urbani, J., Boncz, P., Mika, P.: Robust runtime optimization and
+  skew-resistant execution of analytical sparql queries on pig. In: ISWC. pp.
+  247--262 (2012)
+
+\bibitem{Leis:2015:GQO:2850583.2850594}
+Leis, V., Gubichev, A., Mirchev, A., Boncz, P., Kemper, A., Neumann, T.: How
+  good are query optimizers, really? PVLDB  \textbf{9}(3) (Nov 2015)
+
+\bibitem{Lipton:1990:PSE:93597.93611}
+Lipton, R.J., Naughton, J.F., Schneider, D.A.: Practical selectivity estimation
+  through adaptive sampling. In: SIGMOD. pp. 1--11 (1990)
+
+\bibitem{cardproblem}
+Lohman, G.: Is query optimization a solved problem?
+  \url{http://wp.sigmod.org/?p=1075} (2014)
+
+\bibitem{DBLP:conf/btw/0001G13}
+Neumann, T., Galindo-Legaria, C.A.: Taking the edge off cardinality estimation
+  errors using incremental execution. In: BTW. pp. 73--92 (2013)
+
+\bibitem{Neumann:2011:CSA:2004686.2005604}
+Neumann, T., Moerkotte, G.: Characteristic sets: Accurate cardinality
+  estimation for {RDF} queries with multiple joins. In: ICDE. pp. 984--994
+  (2011)
+
+\bibitem{rdf3x2010}
+Neumann, T., Weikum, G.: The {RDF-3X} engine for scalable management of {RDF}
+  data. In: PVLDB. vol.~19, pp. 91--113 (2010)
+
+\bibitem{Perez:2009:SCS:1567274.1567278}
+P{\'e}rez, J., Arenas, M., Gutierrez, C.: Semantics and complexity of {SPARQL}.
+  ACM Trans. Database Syst.  \textbf{34}(3),  16:1--16:45 (2009)
+
+\bibitem{s3g2-generator}
+Pham, M., Boncz, P.A., Erling, O.: {S3G2:} {A} scalable structure-correlated
+  social graph generator. In: {TPCTC}. pp. 156--172 (2012)
+
+\bibitem{Picalausa:2011:RSQ:1999299.1999306}
+Picalausa, F., Vansummeren, S.: What are real {SPARQL} queries like? In: SWIM.
+  pp. 7:1--7:6 (2011)
+
+\bibitem{Schmidt:2010:FSQ:1804669.1804675}
+Schmidt, M., Meier, M., Lausen, G.: Foundations of {SPARQL} query optimization.
+  In: ICDT. pp. 4--33 (2010)
+
+\bibitem{Stocker:2008:SBG:1367497.1367578}
+Stocker, M., Seaborne, A., Bernstein, A., Kiefer, C., Reynolds, D.: {SPARQL}
+  basic graph pattern optimization using selectivity estimation. In: WWW. pp.
+  595--604 (2008)
+
+\bibitem{Tsialiamanis:2012:HQO:2247596.2247635}
+Tsialiamanis, P., Sidirourgos, L., Fundulaki, I., Christophides, V., Boncz, P.:
+  Heuristics-based query optimisation for {SPARQL}. In: EDBT. pp. 324--335
+  (2012)
+
+\bibitem{Weiss:2008:HSI:1453856.1453965}
+Weiss, C., Karras, P., Bernstein, A.: Hexastore: Sextuple indexing for semantic
+  web data management. PVLDB.  \textbf{1}(1) (Aug 2008)
+
+\bibitem{wilkinson06}
+Wilkinson, K.: {Jena Property Table Implementation}. In: {SSWS}. pp. 35--46
+  (2006)
+
+\bibitem{triplebit-vldb2013}
+Yuan, P., Liu, P., Wu, B., Jin, H., Zhang, W., Liu, L.: {T}riple{B}it: A fast
+  and compact system for large scale {RDF} data. PVLDB  \textbf{6}(7),
+  517--528 (2013)
+
+\end{thebibliography}

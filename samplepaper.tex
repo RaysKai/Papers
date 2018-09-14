@@ -1,0 +1,189 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% HEADER and TITLE stuffs. (Sep 7, 2018)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[runningheads]{llncs}
+%
+\usepackage{graphicx}
+
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+
+\begin{document}
+%
+\title{Synopsis-based Sampling for Cardinality Estimation of SPARQL queries}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+% \author{Lei Gai\inst{1}\orcidID{0000-1111-2222-3333} \and
+% Tengjiao Wang\inst{1}\orcidID{1111-2222-3333-4444} \and
+% Wei Chen\inst{1}\orcidID{2222--3333-4444-5555}}
+\author{Lei Gai\inst{1} \and
+Tengjiao Wang\inst{1} \and
+Wei Chen\inst{1}}
+%
+\authorrunning{L. Gai et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+
+% \institute{Princeton University, Princeton NJ 08544, USA \and
+% Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
+% \email{lncs@springer.com}\\
+% \url{http://www.springer.com/gp/computer-science/lncs} \and
+% ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+% \email{\{abc,lncs\}@uni-heidelberg.de}}
+\institute{Peking University, P.R.China \email{\{lei.gai, tjwang, pekingchenwei\}@pku.edu.cn}}
+%
+\maketitle              % typeset the header of the contribution
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% ABSTRACT and KEYWORDS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+The abstract 
+
+\keywords{First keyword  \and Second keyword \and Another keyword.}
+\end{abstract}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% INTRODUCTION (Sep 7, 2018)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%
+SPARQL is a formal way to structurally express users' analytical/semantical tasks. For many of today's tasks, user often need to pose ad hoc complex queries involving huge tables.
+
+The research community has long realized the need for accurate cardinality estimation in query optimization. Unfortunately, despite many eminent works on this topic, it is still not a well solved problem considering the trade-off between several factors.
+
+We can see two line of work. synopsis
+
+Due to the multiplicative nature of joins, errors in cardinality estimation typically propagate exponentially through a larger query plan (\underline{cite SIGMOD91, ioannidis}). This means even small improvement can dramatically improve the quality of estimation available to the query optimizer, thus boot the overall query performance (\underline{cite VLDB2015, how good are query optimzier, really?}) 
+
+
+Joins are expensive, especially on large data with complicated correlations. The sample operator cannot be push through a join sample, i.e., $sample(R \bowtie) S) \neq sample(R) \bowtie(S)$. This means sample is not reusable to the next sampling. (cite SIgMOD2018 random sampling over joins revisited, CIDR2017, cardinality estimation done right-index-based join sampling).
+
+The optimizer's cost model relies heavily upon the  underlying cardinality model.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PRELIMINARIES (Sep 8, 2018)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Preliminaries}
+
+\subsection{Sequential Sampling}
+
+\subsection{multi-way join sampling}
+
+\textbf{simple random sample} of size $k$, each element in the underlying population is  picked with equal probability (uniform), and the procedure is repeated $k$ times independently (independent).
+
+the fundamental challenge for the problem i that the sampling operation cannot be pushed down through a join operator. 
+
+To obtain uniform and independent samples, Two methods were proposed (\underline{cite Chaudhuri}). One is to reject samples from $sample(R) \bowtie sample(S)$ with appropriate probability. The other takes samples from $R$ non-uniformly, guided by the statistical information on $S$. (However, they only considered the problem over two-relation joins).
+
+(\underline{cite SIGMOD 2018}) gives a generic framework to handle multi-way joins, and with selection predicates. It leverage the join size upper bound (cite AGM method), depending on what prior information is available about the underlying data, and offers different trade-offs between sample production latency and throughput.
+
+common join attribute, join predicate.
+
+If the sample size is $n$ and the dataset size is $N$, SRS generates a sample by taking every $k$-th data item ($k=\lceil\frac{N}{n}\rceil$ ). 
+
+\subsection{cardinality estimation}
+
+(\underline{cite  VLDB2015, how good are query optimzier, really?})
+
+\begin{itemize}
+	\item \textbf{estimate for triple pattern (base table)}
+	\item \textbf{estimate for Joins}
+\end{itemize}
+
+\subsection{self-join, sampling}
+
+(AGMS) Alon, N., Gibbons, P.B., Matias, Y., Szegedy, M. Tracking
+Join and Self-Join Sizes in Limited Storage. In Proceedings
+of the eighteenth ACM SIGMOD-SIGACT-SIGART
+symposium on Principles of database systems (PODS '99),
+ACM Press, New York, NY, 1999, 10-20. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MODELING (Sep 8, 2018)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Data Model}
+
+Idea: use an oracle to tell when a key is heavy [Kumar Xu 06] 
+Adjust sampling probability accordingly
+
+Can use a “sketch” data structure to play the role of oracle
+Like a hash table with collisions, tracks approximate frequencies
+E.g. (Counting) Bloom Filters, Count-Min Sketch
+
+Track probability with which key is sampled, use HT estimators
+Set probability of sampling key with (estimated) weight $w$ as $1/(1 + \epsilon w)$ for parameter $\epsilon$ : decreases as $w$ increases
+Decreasing e improves accuracy, increases sample size
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% SAMPLING (Sep 11, 2018)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Sampling}
+
+For each tuple in $R$, choose it for the sample with probability $f$, independent of other tuples. In real world DB, choose each tuple in $R$ is prohibitively costly. we can easily convert it to Sampling with/-out Replacement (SWoR). Sampling a slightly larger fraction $\hat{f}$ to ensure that we get at least an f-fraction, as can
+be shown by the Chernoff bound, and then rejecting an appropriate number of the samples to ensure that we get exactly an f-fraction. 
+
+
+Given a RDF dataset $\mathcal{D}$ of $d$ triples, and a Conjunctive SPARQL query with $k$ triple patterns  $TP=\{P_i\}$, $i=1,\ldots,k$. We use $\sigma_{P_{i}}(\mathcal{D})$ to represent the set of triples that match triple pattern $P_{i}$. For two triple pattern $P_{1}$ and $P_{2}$ with a join attribute $A$,  let $n_1(v)$ and $n_2(v)$ be distinct number of triples in $\sigma_{P_{1}}(\mathcal{D})$ and $\sigma_{P_{2}}(\mathcal{D})$ that contains value $v$ in  $A$ respectively. Clearly, $\sum_{v \in A} n_1(v) = |\sigma_{P_{1}}(\mathcal{D})|$, and $\sum_{v \in A} n_2(v) = |\sigma_{P_{2}}(\mathcal{D})|$. The cardinality of $P_{1} \bowtie P_{2}$ can be estimated as 
+
+\begin{equation}
+n = |P_{1} \bowtie P_{2}| = \sum\limits_{v \in A} n_1(v)\cdot n_2(v)
+\end{equation}
+
+For $n_i(v)$, if there are synopsis available to capture the correlation among triple elements, such multi-dimensional histogram or index like RDF-3X, $n_i(v)$ can be directly estimated or even get exactly. otherwise more common cases we should rely on applying \textit{independence assumption} for S,P and O. 
+
+To computing \textsc{Sampling}$(TR_{1} \bowtie TR_{2}, f)$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% BIB: generate by generatebibitem.tex in 'genbib' sub-folder.
+%      Copy the content of appropriate .bbl content and paste there.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+
+\begin{thebibliography}{8}
+
+
+\end{thebibliography}
+
+
+\end{document}
